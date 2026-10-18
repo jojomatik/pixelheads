@@ -10,7 +10,8 @@
     "face"
   ],
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "npm run build",
+    "build": "tsc",
     "semantic-release": "semantic-release",
     "test": "jest"
   },
