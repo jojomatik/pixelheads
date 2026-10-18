@@ -10,6 +10,11 @@
       "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
       "semanticCommitScope": "deps-dev",
       "labels": ["type:build", "scope:deps-dev"], 
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeStrategy": "rebase",
     }
   ]
 }
