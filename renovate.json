@@ -7,6 +7,10 @@
   "labels": ["type:build", "scope:deps"], 
   "packageRules": [
     {
+      "matchUpdateTypes": ["major"],
+      "separateMultipleMajor": true,
+    },
+    {
       "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
       "semanticCommitScope": "deps-dev",
       "labels": ["type:build", "scope:deps-dev"], 
