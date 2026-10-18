@@ -40,7 +40,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit
       - name: Build
-        run: tsc
+        run: npm run build
   semantic-release:
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
     name: Create a semantic release
@@ -85,7 +85,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
       - name: Build
-        run: tsc
+        run: npm run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
