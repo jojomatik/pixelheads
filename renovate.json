@@ -4,12 +4,9 @@
     "config:recommended",
     ":semanticCommitTypeAll(build)"
   ],
-  "labels": ["type:build", "scope:deps"], 
+  "labels": ["type:build", "scope:deps"],
+  "separateMultipleMajor": true,
   "packageRules": [
-    {
-      "matchUpdateTypes": ["major"],
-      "separateMultipleMajor": true,
-    },
     {
       "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
       "semanticCommitScope": "deps-dev",
