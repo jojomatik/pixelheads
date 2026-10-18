@@ -24,12 +24,12 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "axios": "^1.2.6",
-    "sharp": "^0.31.3"
+    "sharp": "^0.35.0"
   },
   "devDependencies": {
     "@semantic-release/exec": "^7.0.0",
     "@semantic-release/git": "^11.0.0",
-    "@types/sharp": "^0.31.1",
+    "@types/sharp": "^0.32.0",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "conventional-changelog-conventionalcommits": "^9.0.0",
