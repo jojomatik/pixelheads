@@ -36,7 +36,7 @@ npm install
 
 To build, run the following commands:
 ```sh
-tsc
+npm run build
 ```
 
 To pack the project as a tarball, run the following commands:
