@@ -25,7 +25,6 @@ A library that makes it easy to retrieve skins and faces of minecraft players ba
 Prerequisites:
 - Git
 - Node.js and npm
-- TypeScript installed globally (`npm install -g typescript`)
 
 Run the following commands:
 ```sh
@@ -36,7 +35,7 @@ npm install
 
 To build, run the following commands:
 ```sh
-tsc
+npm run build
 ```
 
 To pack the project as a tarball, run the following commands:
