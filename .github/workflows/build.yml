@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '24'
       - name: Cache node modules
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         id: cache
         env:
           cache-name: cache-node-modules
@@ -25,7 +25,7 @@ jobs:
 
       - name: Cache npm cache
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         env:
           cache-name: cache-npm-cache
         with:
