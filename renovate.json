@@ -13,6 +13,11 @@
       "labels": ["type:build", "scope:deps-dev"], 
     },
     {
+      "matchManagers": ["github-actions"],
+      "semanticCommitScope": "deps-dev",
+      "labels": ["type:build", "scope:deps-dev"], 
+    },
+    {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
