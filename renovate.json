@@ -18,5 +18,9 @@
       "automergeStrategy": "rebase",
       "minimumReleaseAge": "7 days",
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+  }
 }
