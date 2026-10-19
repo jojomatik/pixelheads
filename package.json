@@ -13,7 +13,8 @@
     "prepublish": "npm run build",
     "build": "tsc",
     "semantic-release": "semantic-release",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . --max-warnings 0"
   },
   "files": [
     "dist/*",
