@@ -8,7 +8,7 @@ import sharp from "sharp";
  */
 export async function getSkinAsBase64(uuid: string): Promise<string> {
   const response = await axios.get(
-    "https://sessionserver.mojang.com/session/minecraft/profile/" + uuid
+    "https://sessionserver.mojang.com/session/minecraft/profile/" + uuid,
   );
 
   // Fetch profile.
@@ -27,7 +27,7 @@ export async function getSkinAsBase64(uuid: string): Promise<string> {
 
   if (!data.properties) {
     throw new Error(
-      errorMessage + "No properties in response: " + JSON.stringify(data)
+      errorMessage + "No properties in response: " + JSON.stringify(data),
     );
   }
 
@@ -36,7 +36,7 @@ export async function getSkinAsBase64(uuid: string): Promise<string> {
     if (property.name === "textures") {
       // Find object containing the skin URL.
       const response: { textures: { SKIN: { url: string } } } = JSON.parse(
-        Buffer.from(property.value, "base64").toString()
+        Buffer.from(property.value, "base64").toString(),
       );
 
       let skinURL: string;
@@ -57,8 +57,8 @@ export async function getSkinAsBase64(uuid: string): Promise<string> {
           .catch((error) =>
             console.error(
               errorMessage + "Could not load buffer for URL " + skinURL,
-              error
-            )
+              error,
+            ),
           );
 
         if (b64) return b64;
@@ -68,13 +68,13 @@ export async function getSkinAsBase64(uuid: string): Promise<string> {
         throw new Error(
           errorMessage +
             "No url to skin in response: " +
-            JSON.stringify(response)
+            JSON.stringify(response),
         );
     }
   }
 
   throw new Error(
-    errorMessage + "No textures object in response: " + JSON.stringify(data)
+    errorMessage + "No textures object in response: " + JSON.stringify(data),
   );
 }
 
@@ -95,7 +95,7 @@ export async function getFaceAsBase64(uuid: string): Promise<string> {
     })
     .catch((error) => {
       throw new Error(
-        "Couldn't extract head of skin for uuid " + uuid + ". Reason: " + error
+        "Couldn't extract head of skin for uuid " + uuid + ". Reason: " + error,
       );
     });
 }
