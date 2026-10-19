@@ -41,6 +41,9 @@ jobs:
         run: npm ci --prefer-offline --no-audit
       - name: Build
         run: npm run build
+      - name: Lint
+        run: npm run lint
+
   semantic-release:
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
     name: Create a semantic release
