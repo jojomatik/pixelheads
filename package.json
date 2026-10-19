@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "conventional-changelog-conventionalcommits": "^9.0.0",
-    "eslint": "^8.31.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^30.0.0",
     "prettier": "^2.8.1",
