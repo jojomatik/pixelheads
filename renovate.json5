@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
+    "config:best-practices",
+    "config:js-lib",
+    "mergeConfidence:all-badges",
     ":semanticCommitTypeAll(build)",
   ],
   "labels": ["type:build", "scope:deps"],
