@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":semanticCommitTypeAll(build)"
+    ":semanticCommitTypeAll(build)",
   ],
   "labels": ["type:build", "scope:deps"],
   "separateMultipleMajor": true,
@@ -10,12 +10,12 @@
     {
       "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
       "semanticCommitScope": "deps-dev",
-      "labels": ["type:build", "scope:deps-dev"], 
+      "labels": ["type:build", "scope:deps-dev"],
     },
     {
       "matchManagers": ["github-actions"],
       "semanticCommitScope": "deps-dev",
-      "labels": ["type:build", "scope:deps-dev"], 
+      "labels": ["type:build", "scope:deps-dev"],
     },
     {
       "matchUpdateTypes": ["minor", "patch"],
@@ -23,11 +23,11 @@
       "automerge": true,
       "automergeStrategy": "rebase",
       "minimumReleaseAge": "7 days",
-    }
+    },
   ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
     "automergeStrategy": "rebase",
-  }
+  },
 }
