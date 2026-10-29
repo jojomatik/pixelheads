@@ -41,6 +41,17 @@
       "matchUpdateTypes": ["major"],
       "automerge": false,
     },
+    {
+      // Types must match the minimum supported Node version ("engines" in package.json).
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "<23",
+    },
+    {
+      // CI uses LTS releases only; the build matrix is maintained manually.
+      "matchDepNames": ["node"],
+      "matchManagers": ["github-actions"],
+      "allowedVersions": "/^(22|24)(\\.|$)/",
+    },
   ],
   "lockFileMaintenance": {
     "enabled": true,

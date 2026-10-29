@@ -21,6 +21,9 @@
     "package.json",
     "README.md"
   ],
+  "engines": {
+    "node": ">=22"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
@@ -32,7 +35,7 @@
     "@eslint/js": "10.0.1",
     "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "11.0.1",
-    "@types/node": "26.6.5",
+    "@types/node": "22.20.5",
     "@typescript-eslint/eslint-plugin": "8.72.0",
     "@typescript-eslint/parser": "8.72.0",
     "conventional-changelog-conventionalcommits": "9.3.1",
