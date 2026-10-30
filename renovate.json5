@@ -47,10 +47,10 @@
       "allowedVersions": "<23",
     },
     {
-      // CI uses LTS releases only; the build matrix is maintained manually.
+      // CI tests supported LTS releases only; the build matrix is maintained manually.
       "matchDepNames": ["node"],
       "matchManagers": ["github-actions"],
-      "allowedVersions": "/^(22|24)(\\.|$)/",
+      "allowedVersions": "/^(22|24|26)(\\.|$)/",
     },
   ],
   "lockFileMaintenance": {
