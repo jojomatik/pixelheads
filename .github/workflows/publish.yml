@@ -22,7 +22,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-build-26-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
 
       - name: Cache npm cache
         if: steps.cache.outputs.cache-hit != 'true'
@@ -67,7 +67,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-build-26-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
 
       - name: Cache npm cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
