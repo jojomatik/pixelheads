@@ -21,6 +21,10 @@ A library that makes it easy to retrieve skins and faces of minecraft players ba
       alt="face of player"/>
    ```
 
+## Supported Node.js versions
+
+Node.js 22 and newer (see `engines` in `package.json`). CI tests all supported LTS and current releases.
+
 ## Building
 Prerequisites:
 - Git
