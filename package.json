@@ -13,7 +13,7 @@
     "prepublish": "npm run build",
     "build": "tsc",
     "semantic-release": "semantic-release",
-    "test": "jest",
+    "test": "vitest run --coverage",
     "lint": "eslint . --max-warnings 0"
   },
   "files": [
@@ -38,16 +38,15 @@
     "@types/node": "22.20.5",
     "@typescript-eslint/eslint-plugin": "8.72.1",
     "@typescript-eslint/parser": "8.72.1",
+    "@vitest/coverage-v8": "5.0.5",
     "conventional-changelog-conventionalcommits": "9.3.1",
     "eslint": "10.13.0",
     "eslint-plugin-prettier": "5.5.7",
     "globals": "17.13.0",
-    "jest": "30.5.2",
     "prettier": "3.9.10",
     "semantic-release": "25.0.9",
-    "ts-jest": "29.4.15",
-    "ts-node": "10.9.2",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
   },
   "author": {
     "name": "jojomatik",
