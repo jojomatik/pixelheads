@@ -13,6 +13,7 @@
     "prepublish": "npm run build",
     "build": "tsc",
     "semantic-release": "semantic-release",
+    "test:release-notes": "node scripts/check-release-notes.mjs",
     "test": "jest",
     "lint": "eslint . --max-warnings 0"
   },

@@ -47,6 +47,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit
       - name: Test
         run: npm run test
+      - name: Check release notes
+        run: npm run test:release-notes
       - name: Upload coverage to Codecov
         if: matrix.node == '26'
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
