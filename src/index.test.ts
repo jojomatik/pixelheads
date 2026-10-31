@@ -1,5 +1,5 @@
 import { getFaceAsBase64, getSkinAsBase64 } from "./index";
-import { expect, test } from "@jest/globals";
+import { expect, test } from "vitest";
 
 // Test if the correct skin is returned for the uuid of Jojomatik.
 test("Skin of Jojomatik is returned.", async () => {
