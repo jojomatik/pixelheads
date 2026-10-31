@@ -16,7 +16,7 @@ const config = require("../release.config.js") as ReleaseConfig;
 async function checkReleaseNotes(): Promise<void> {
   const cwd = mkdtempSync(join(tmpdir(), "pixelheads-release-notes-"));
   const git = (...args: string[]): string =>
-    execFileSync("git", args, { cwd, encoding: "utf8" }).trim();
+    execFileSync("/usr/bin/git", args, { cwd, encoding: "utf8" }).trim();
 
   try {
     git("init", "--initial-branch=main");
@@ -54,7 +54,7 @@ async function checkReleaseNotes(): Promise<void> {
         dryRun: true,
         ci: false,
       },
-      { cwd },
+      { cwd, env: { PATH: "/usr/bin:/bin", HOME: process.env.HOME } },
     );
 
     assert.ok(result, "The dry run must produce a release");
@@ -83,7 +83,9 @@ async function checkReleaseNotes(): Promise<void> {
   }
 }
 
-checkReleaseNotes().catch((error: unknown) => {
+try {
+  await checkReleaseNotes();
+} catch (error: unknown) {
   console.error(error);
   process.exitCode = 1;
-});
+}
