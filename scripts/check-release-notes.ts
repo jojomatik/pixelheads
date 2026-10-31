@@ -1,15 +1,21 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, rmSync } from "node:fs";
+import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import semanticRelease from "semantic-release";
-import releaseConfig from "../release.config.js";
 
-async function checkReleaseNotes() {
+type ReleasePlugin = string | [string, Record<string, unknown>];
+type ReleaseConfig = { plugins: ReleasePlugin[] };
+
+const require = createRequire(import.meta.url);
+const config = require("../release.config.js") as ReleaseConfig;
+
+async function checkReleaseNotes(): Promise<void> {
   const cwd = mkdtempSync(join(tmpdir(), "pixelheads-release-notes-"));
-  const git = (...args) =>
+  const git = (...args: string[]): string =>
     execFileSync("git", args, { cwd, encoding: "utf8" }).trim();
 
   try {
@@ -32,8 +38,8 @@ async function checkReleaseNotes() {
       git("commit", "--allow-empty", "-m", message);
     }
 
-    const plugins = releaseConfig.plugins.filter(
-      (plugin) =>
+    const plugins = config.plugins.filter(
+      (plugin): plugin is [string, Record<string, unknown>] =>
         Array.isArray(plugin) &&
         [
           "@semantic-release/commit-analyzer",
@@ -77,9 +83,7 @@ async function checkReleaseNotes() {
   }
 }
 
-try {
-  await checkReleaseNotes();
-} catch (error) {
+checkReleaseNotes().catch((error: unknown) => {
   console.error(error);
   process.exitCode = 1;
-}
+});
